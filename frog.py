@@ -32,6 +32,7 @@ class App:
         pd.set_option("display.max_rows", 10)
         self.filename = "./temp.csv"
         self.data = pd.read_csv(self.filename)
+        self.data_describe = self.data.describe()
         self.update_count = 0
         self.update_time = datetime.now().time()
 
@@ -43,6 +44,7 @@ class App:
 
         if pyxel.frame_count % (self.fps*10) == 0:
             self.data = pd.read_csv(self.filename)
+            self.data_describe = self.data.describe()
             self.update_count += 1
             self.update_time = datetime.now().time()
 
@@ -63,6 +65,8 @@ class App:
         #pyxel.text(15, 135, str(self.data.dtypes), 2)
 
         #pyxel.text(15, 135, str(self.data.columns), 2)
+
+        pyxel.text(160, 35, str(self.data_describe), 2)
         self.draw_color()
 
     

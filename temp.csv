@@ -1,4 +1,4 @@
-id, name, value, temp, val, time, result, maximum_length
+id, name, value, temp, val, time, result
 0, a, 89, 0
 1, b, 73
 2, c, 36
